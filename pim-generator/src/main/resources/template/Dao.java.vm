@@ -1,0 +1,29 @@
+package ${package}.${moduleName}.dao;
+
+import ${package}.${moduleName}.entity.${className}Entity;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@Mapper
+public interface ${className}Dao extends BaseMapper<${className}Entity> {
+    /**
+     *  SQL方式保存
+     * @param ${classname}Entity
+     * @return
+     */
+    Integer save${className}(${className}Entity ${classname}Entity);
+
+    /**
+     *  SQL方式更新
+     * @param ${classname}Entity
+     * @return
+     */
+    Integer update${className}(${className}Entity ${classname}Entity);
+}
