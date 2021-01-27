@@ -9,7 +9,6 @@
     <modules>
         <module>pim-generator</module>
         <module>pim-core</module>
-        <module>pim-auth</module>
         <module>pim-oauth</module>
     </modules>
     <packaging>pom</packaging>
