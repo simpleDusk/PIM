@@ -1,0 +1,9 @@
+/pim-oauth/*.iml
+/pim-core/*.iml
+/pim-generator/*.iml
+/pim-oauth/target
+/pim-core/target
+/pim-generator/target
+/.idea
+*.iml
+/pim-app-api/target
