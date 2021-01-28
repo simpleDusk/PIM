@@ -2,10 +2,10 @@ package com.ps.controller;
 
 
 
+import com.pim.utils.R;
 import com.ps.service.SysGeneratorService;
 import com.ps.utils.PageUtils;
 import com.ps.utils.Query;
-import com.ps.utils.R;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

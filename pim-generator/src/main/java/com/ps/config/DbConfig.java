@@ -3,8 +3,8 @@
 package com.ps.config;
 
 
+import com.pim.utils.RRException;
 import com.ps.dao.*;
-import com.ps.utils.RRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
