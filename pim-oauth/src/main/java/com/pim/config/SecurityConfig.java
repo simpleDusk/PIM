@@ -27,7 +27,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // 设置用户账号信息和权限
-        auth.inMemoryAuthentication().withUser("zhangsan").password("123456").authorities("/");
+        auth.inMemoryAuthentication().withUser("zhangsan").password("123456").authorities("save",
+                "delete", "update", "list");
+        auth.inMemoryAuthentication().withUser("lisi").password("141310").authorities(
+                "delete");
     }
 
     /**
@@ -38,7 +41,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/**").fullyAuthenticated().and().httpBasic();
+        //HTTP方式
+        //http.authorizeRequests().antMatchers("/**").fullyAuthenticated().and().httpBasic();
+        //表单方式
+        //http.authorizeRequests().antMatchers("/**").fullyAuthenticated().and().formLogin();
+
+        http.authorizeRequests()
+                .antMatchers("/save").hasAnyAuthority("save")
+                .antMatchers("/delete").hasAnyAuthority("delete")
+                .antMatchers("/update").hasAnyAuthority("update")
+                .antMatchers("/list").hasAnyAuthority("list")
+                .antMatchers("/**").fullyAuthenticated().and().formLogin();
     }
 
 
