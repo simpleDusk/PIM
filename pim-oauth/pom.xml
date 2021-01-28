@@ -16,6 +16,11 @@
             <artifactId>pim-core</artifactId>
             <groupId>com.ps</groupId>
         </dependency>
+        <!-->spring-boot 整合security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

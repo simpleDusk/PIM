@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pim.modules.biz.dao.SysUserDao">
+
+    <!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.pim.modules.biz.entity.SysUserEntity" id="sysUserMap">
+                    <result property="id" column="id"/>
+                    <result property="username" column="username"/>
+                    <result property="realname" column="realname"/>
+                    <result property="password" column="password"/>
+                    <result property="createdate" column="createDate"/>
+                    <result property="lastlogintime" column="lastLoginTime"/>
+                    <result property="enabled" column="enabled"/>
+                    <result property="accountnonexpired" column="accountNonExpired"/>
+                    <result property="accountnonlocked" column="accountNonLocked"/>
+                    <result property="credentialsnonexpired" column="credentialsNonExpired"/>
+            </resultMap>
+
+    <insert id="saveSysUser" parameterType="com.pim.modules.biz.entity.SysUserEntity">
+        insert into sys_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                            <if test="id != null ">
+                    id,
+                </if>
+                            <if test="username != null  and  username !=''">
+                    username,
+                </if>
+                            <if test="realname != null  and  realname !=''">
+                    realname,
+                </if>
+                            <if test="password != null  and  password !=''">
+                    password,
+                </if>
+                            <if test="createdate != null ">
+                    createDate,
+                </if>
+                            <if test="lastlogintime != null ">
+                    lastLoginTime,
+                </if>
+                            <if test="enabled != null ">
+                    enabled,
+                </if>
+                            <if test="accountnonexpired != null ">
+                    accountNonExpired,
+                </if>
+                            <if test="accountnonlocked != null ">
+                    accountNonLocked,
+                </if>
+                            <if test="credentialsnonexpired != null ">
+                    credentialsNonExpired,
+                </if>
+                    </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                            <if test="id != null ">
+                    #{id},
+                </if>
+                            <if test="username != null  and  username !=''">
+                    #{username},
+                </if>
+                            <if test="realname != null  and  realname !=''">
+                    #{realname},
+                </if>
+                            <if test="password != null  and  password !=''">
+                    #{password},
+                </if>
+                            <if test="createdate != null ">
+                    #{createdate},
+                </if>
+                            <if test="lastlogintime != null ">
+                    #{lastlogintime},
+                </if>
+                            <if test="enabled != null ">
+                    #{enabled},
+                </if>
+                            <if test="accountnonexpired != null ">
+                    #{accountnonexpired},
+                </if>
+                            <if test="accountnonlocked != null ">
+                    #{accountnonlocked},
+                </if>
+                            <if test="credentialsnonexpired != null ">
+                    #{credentialsnonexpired},
+                </if>
+                    </trim>
+    </insert>
+
+    <update id="updateSysUser" parameterType="com.pim.modules.biz.entity.SysUserEntity">
+        update sys_user
+        <set>
+                                                                            <if test="username != null  and  username !=''">
+                        username = #{username},
+                    </if>
+                                                                <if test="realname != null  and  realname !=''">
+                        realname = #{realname},
+                    </if>
+                                                                <if test="password != null  and  password !=''">
+                        password = #{password},
+                    </if>
+                                                                <if test="createdate != null ">
+                        createDate = #{createdate},
+                    </if>
+                                                                <if test="lastlogintime != null ">
+                        lastLoginTime = #{lastlogintime},
+                    </if>
+                                                                <if test="enabled != null ">
+                        enabled = #{enabled},
+                    </if>
+                                                                <if test="accountnonexpired != null ">
+                        accountNonExpired = #{accountnonexpired},
+                    </if>
+                                                                <if test="accountnonlocked != null ">
+                        accountNonLocked = #{accountnonlocked},
+                    </if>
+                                                                <if test="credentialsnonexpired != null ">
+                        credentialsNonExpired = #{credentialsnonexpired},
+                    </if>
+                                    </set>
+        where  id = #{id}
+    </update>
+</mapper>
